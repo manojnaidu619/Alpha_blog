@@ -1,0 +1,15 @@
+<center>
+<table>
+  <tr>
+    <th>TITLE</th>
+    <th>DESCRIPTION</th>
+  </tr>
+  <% @article.each do |article| %>
+   <tr>
+     <td><%= article.title %></td>
+     <td><%= article.description %></td>
+   </tr>
+  <% end %>
+</table><br><br>
+<%= link_to "Back to Home", root_path %>
+</center>
