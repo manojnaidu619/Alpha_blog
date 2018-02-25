@@ -4,12 +4,5 @@
      <li><%= msg %></li>
    </ul>
  <% end %>
-
-<%= form_for @article do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %><br><br>
-  <%= f.submit "SAVE" %><br>
-<% end %><br><br>
+ <%= render 'form' %><br><br>
 <%= link_to "Back to Home", root_path %>
