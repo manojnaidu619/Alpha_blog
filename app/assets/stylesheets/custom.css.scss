@@ -1,9 +1,10 @@
 @import "bootstrap";
 
 body{
-   background-image: asset-url('abc.png');
+   background-image: asset-url('gradient.jpg');
+   width: 100%;
+   height: auto;
    background-repeat: no-repeat;
-   background-size: cover;
 }
 
 small{
@@ -47,4 +48,7 @@ small{
 .flash{
   background-color: yellow;
   color: red;
+}
+#welcome{
+  color: white;
 }
