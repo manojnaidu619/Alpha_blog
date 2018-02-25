@@ -1,8 +1,10 @@
-<h1>Create a new form</h1>
- <% @article.errors.full_messages.each do |msg| %>
-   <ul>
-     <li><%= msg %></li>
-   </ul>
- <% end %>
- <%= render 'form' %><br><br>
-<%= link_to "Back to Home", root_path %>
+<h2 align="center">Create a new form</h2>
+  <div class="container" id="errors">
+   <% @article.errors.full_messages.each do |msg| %>
+     <ul>
+       <li><%= msg %></li>
+     </ul>
+   <% end %>
+</div>
+ <%= render 'articles/form' %><br><br>
+ <div id="back_to_home"><%= link_to "Back to Home", root_path ,class:"btn btn-secondary" %></div>

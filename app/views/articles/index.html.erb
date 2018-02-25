@@ -1,18 +1,14 @@
 <center>
-<table>
-  <tr>
-    <th>TITLE</th>
-    <th>DESCRIPTION</th>
-  </tr>
   <% @article.each do |article| %>
-   <tr>
-     <td><%= article.title %></td>
-     <td><%= article.description %></td>
-     <td><%= link_to "Edit", edit_article_path(article) %></td>
-     <td><%= link_to "show", article_path(article) %></td>
-     <td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-   </tr>
-  <% end %>
-</table><br><br>
+    <div class="container main_container">
+      <%= article.title %><br>
+      <%= article.description %>
+      <div class="container" id="buttons">
+        <%= link_to "Edit", edit_article_path(article) , class:"btn btn-primary"%>
+        <%= link_to "show", article_path(article) ,class:"btn btn-success"%>
+        <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} ,class:"btn btn-danger"%>
+      </div>
+    </div>
+    <% end %><br><br>
 <%= link_to "Back to Home", root_path %>
 </center>

@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :perform , only:[:edit,:update,:destroy,:show]
+  before_action :perform , except:[:index,:new,:create]
 
   def index
     @article = Article.all
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
      flash[:notice] = "Article was successfully created"
      redirect_to root_path
    else
-     render 'new'
+     render new_article_path
    end
   end
 

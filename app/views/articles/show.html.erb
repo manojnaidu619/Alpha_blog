@@ -1,4 +1,8 @@
-<b>TITLE:</b><%= @article.title %><br>
-<b>DESCRIPTION:</b><%= @article.description %><br><br>
-<%= link_to "EDIT", edit_article_path %><br><br>
-<%= link_to "BACK TO ALL POSTS", articles_path %>
+<div class="container pad">
+  <div class="jumbotron">
+    <%= @article.title %><br>
+    <%= @article.description %><br><br>
+    <%= link_to "EDIT", edit_article_path , class:"btn btn-success"%><br><br>
+    <%= link_to "BACK TO ALL POSTS", articles_path ,class:"btn btn-secondary" %>
+  </div>
+</div>

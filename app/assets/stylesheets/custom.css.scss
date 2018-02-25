@@ -1,0 +1,50 @@
+@import "bootstrap";
+
+body{
+   background-image: asset-url('abc.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+small{
+   color: white;
+}
+
+#errors{
+   background-color: #d18b83;
+   text-align: center;
+   color: white;
+   border-radius: 0.5;
+}
+
+#errors li{
+   list-style: none;
+}
+
+#back_to_home{
+   margin-left: 55px;
+}
+
+.main_container{
+   padding-top: 15px;
+   background-color: white;
+   border: 1px solid pink;
+}
+#title{
+   font-weight: bold;
+   padding: 5px;
+}
+#buttons{
+   padding: 5px;
+}
+.show{
+   font-weight: bold;
+}
+.pad {
+   text-align: center;
+   padding: 15px;
+}
+.flash{
+  background-color: yellow;
+  color: red;
+}

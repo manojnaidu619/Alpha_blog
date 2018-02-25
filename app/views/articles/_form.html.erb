@@ -1,7 +1,16 @@
-<%= form_for @article do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %><br><br>
-  <%= f.submit "SAVE" %><br>
-<% end %><br><br>
+<div class="container">
+
+
+     <%= form_for @article do |f| %>
+     <div class="form-group">
+      <%= f.label :title %>:
+      <%= f.text_field :title,class:"form-control",placeholder:"Enter title",autofocus: 'true',autocomplete: 'off' %><br>
+      </div>
+      <div class="form-group">
+      <%= f.label :description %>:
+      <%= f.text_area :description,class:"form-control" ,placeholder:"Enter description",rows:'5' %><br>
+      </div>
+      <%= f.submit "Save",class:"btn btn-primary",type:"submit"%>
+     <% end %>
+
+</div>

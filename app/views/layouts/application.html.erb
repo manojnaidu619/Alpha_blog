@@ -10,10 +10,14 @@
 
   <body>
     <% flash.each do |name,msg|  %>
-      <ul>
+      <ul class = "flash" >
         <li><%= msg %></li>
       </ul>
     <% end %>
     <%= yield %>
+    <div class="container">
+      <%= render 'layouts/footer' %>
+    </div>
+
   </body>
 </html>
