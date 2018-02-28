@@ -1,4 +1,4 @@
-<h2 align="center">New User SignUp</h2>
+<h2 align="center">Edit Account</h2>
   <div class="container" id="errors">
    <% @user.errors.full_messages.each do |msg| %>
      <ul>
@@ -23,7 +23,7 @@
       <%= f.label :password %>:
       <%= f.password_field :password,class:"form-control" ,placeholder:"Enter password" %><br>
       </div>
-      <%= f.submit "SignUp",class:"btn btn-primary",type:"submit"%> | <%= link_to "Back To home", root_path ,class:"btn btn-secondary"%>
+      <%= f.submit "Update",class:"btn btn-primary",type:"submit"%> | <%= link_to "Back To home", root_path ,class:"btn btn-secondary"%>
      <% end %>
 
 
