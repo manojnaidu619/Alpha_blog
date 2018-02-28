@@ -2,7 +2,13 @@
   <% @article.each do |article| %>
     <div class="container main_container">
       <%= article.title %><br>
-      <%= article.description %>
+      <%= article.description %><br>
+      <div class="about_creator">
+        <small>Created by: <%= article.user.username %> |
+               Created : <%= time_ago_in_words(article.created_at) %> ago |
+               Updated : <%= time_ago_in_words(article.updated_at) %> ago
+        </small>
+      </div>
       <div class="container" id="buttons">
         <%= link_to "Edit", edit_article_path(article) , class:"btn btn-primary"%>
         <%= link_to "show", article_path(article) ,class:"btn btn-success"%>
