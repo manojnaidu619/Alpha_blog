@@ -1,0 +1,9 @@
+<div align="center" class="container main">
+
+      <% @user.each do |user| %>
+      <div class="container users_show">
+         <%= link_to user.username, user_path(user) %>
+      </div>
+      <% end %>
+
+</div>
