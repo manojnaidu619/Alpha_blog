@@ -1,0 +1,33 @@
+<div align = "center" class="container profile">
+  <h2>Welcome to <%= @user.username %>'s Page</h2>
+  <div class="container avatar">
+    <%= gravatar_for @user %>
+  </div>
+  <div class="container name">
+    <%= @user.username %>
+  </div>
+  <div class="container articles">
+    <center>
+      <% @user.articles.each do |article| %>
+        <div class="container main_container text">
+          <%= article.title %><br>
+          <%= article.description %><br>
+          <div class="about_creator">
+            <small>Created by: <%= article.user.username %> |
+                   Created : <%= time_ago_in_words(article.created_at) %> ago |
+                   Updated : <%= time_ago_in_words(article.updated_at) %> ago
+            </small>
+          </div>
+          <div class="container" id="buttons">
+            <%= link_to "Edit", edit_article_path(article) , class:"btn btn-primary"%>
+            <%= link_to "show", article_path(article) ,class:"btn btn-success"%>
+            <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} ,class:"btn btn-danger"%>
+          </div>
+        </div>
+        <% end %><br><br>
+    <%= link_to "Create article", new_article_path %> |
+    <%= link_to "Back to Home", root_path %>
+    </center>
+
+  </div>
+</div>
