@@ -1,6 +1,9 @@
-<center>
+<div class = "container">
+    <div align = "center" class="pagination">
+       <%= will_paginate @article%>
+    </div>
   <% @article.each do |article| %>
-    <div class="container main_container">
+    <div align="center" class="container main_container">
       <%= article.title %><br>
       <%= article.description %><br>
       <div class="about_creator">
@@ -16,5 +19,8 @@
       </div>
     </div>
     <% end %><br><br>
+    <div align = "center" class="pagination">
+       <%= will_paginate @article%>
+    </div>
 <%= link_to "Back to Home", root_path ,class: "btn btn-secondary"%>
-</center>
+</div>
