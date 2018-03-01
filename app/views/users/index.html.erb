@@ -2,6 +2,7 @@
 
       <% @user.each do |user| %>
       <div class="container users_show">
+         <%= link_to gravatar_for(user), user_path(user) %><br>
          <%= link_to user.username, user_path(user) %>
       </div>
       <% end %>

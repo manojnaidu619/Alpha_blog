@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   def update
      if @article.update(article_params)
        flash[:notice] = "Article was successfully Updated!!"
-       redirect_to articles_path
+       redirect_to @article.user
      else
        flash[:notice] = "Encountered some error please try again!!"
        render 'new'
