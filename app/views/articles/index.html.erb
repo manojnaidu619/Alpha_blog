@@ -1,7 +1,4 @@
-<div class = "container">
-    <div align = "center" class="pagination">
-       <%= will_paginate @article%>
-    </div>
+<div align="center" class = "container">
   <% @article.each do |article| %>
     <div align="center" class="container main_container">
       <%= article.title %><br>
@@ -19,8 +16,8 @@
       </div>
     </div>
     <% end %><br><br>
-    <div align = "center" class="pagination">
-       <%= will_paginate @article%>
+    <div class="pagination">
+       <%= will_paginate(@article, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
     </div>
 <%= link_to "Back to Home", root_path ,class: "btn btn-secondary"%>
 </div>
