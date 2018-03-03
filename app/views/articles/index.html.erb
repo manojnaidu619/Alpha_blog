@@ -9,11 +9,13 @@
                Updated : <%= time_ago_in_words(article.updated_at) %> ago
         </small>
       </div>
+      <% if logged_in? && current_user == article.user %>
       <div class="container" id="buttons">
         <%= link_to "Edit", edit_article_path(article) , class:"btn btn-primary"%>
         <%= link_to "show", article_path(article) ,class:"btn btn-success"%>
         <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} ,class:"btn btn-danger"%>
       </div>
+      <% end %>
     </div>
     <% end %><br><br>
        <%= will_paginate(@article, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>

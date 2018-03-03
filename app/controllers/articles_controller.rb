@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :perform , except:[:index,:new,:create]
+  before_action :require_user , except: [:index, :show]
 
   def index
     @article = Article.paginate(:page => params[:page], :per_page => 3)
@@ -11,10 +12,10 @@ class ArticlesController < ApplicationController
 
  def create
   @article = Article.new(article_params)
-  @article.user_id = User.last.id
+  @article.user = current_user
    if @article.save
      flash.now[:notice] = "Article was successfully created"
-     redirect_to root_path
+     redirect_to user_path(@article)
    else
      render new_article_path
    end
@@ -26,7 +27,7 @@ class ArticlesController < ApplicationController
   def update
      if @article.update(article_params)
        flash.now[:notice] = "Article was successfully Updated!!"
-       redirect_to @article.user
+       redirect_to root_path
      else
        flash.now[:notice] = "Encountered some error please try again!!"
        render 'new'

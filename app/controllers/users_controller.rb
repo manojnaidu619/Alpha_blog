@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user , only: [:edit, :update ,:show]
 
   def index
-   @user = User.paginate(:page => params[:page], :per_page => 3)
+   @user = User.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "Account is successfully created"
       redirect_to user_path(@user)
     else
@@ -26,13 +27,14 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:notice] = "Account was successfully Updated"
-      redirect_to articles_path
+      redirect_to user_path(@user)
     else
       render 'edit'
     end
   end
 
   def show
+    @user_paginate = User.paginate(:page => params[:page], :per_page => 5)
   end
 
   private

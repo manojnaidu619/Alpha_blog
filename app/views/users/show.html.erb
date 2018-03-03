@@ -18,11 +18,13 @@
                    Updated : <%= time_ago_in_words(article.updated_at) %> ago
             </small>
           </div>
+          <% if logged_in? %>
           <div class="container" id="buttons">
             <%= link_to "Edit", edit_article_path(article) , class:"btn btn-primary"%>
             <%= link_to "show", article_path(article) ,class:"btn btn-success"%>
             <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} ,class:"btn btn-danger"%>
           </div>
+          <% end %>
         </div>
         <% end %><br><br>
     <div class="re-routes">
@@ -31,6 +33,7 @@
       <% if logged_in? %>
       <%= link_to "Logout", login_path ,method: :delete %>
       <% end %>
+      <%= will_paginate(@user_paginate, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
     </div>
     </center>
 
