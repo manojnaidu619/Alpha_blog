@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %><br>
     <% flash.each do |name,msg|  %>
       <ul class = "flash" >
         <li><%= msg %></li>

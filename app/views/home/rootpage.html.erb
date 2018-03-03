@@ -4,15 +4,11 @@
     <div class="root_buttons">
       <center>
       <% if !logged_in? %>
-      <%= link_to "SignUp",  signup_path,class:"btn btn-primary",role:"button" %>
-      <% end %>
-      <%= link_to "View all posts", articles_path ,class:"btn btn-primary",role:"button" %>
-      <%= link_to "View all users", users_path ,class:"btn btn-primary",role:"button" %><br><br>
-      <% if !logged_in? %>
       <%= link_to "LOGIN", login_path ,class:"btn btn-success",role:"button" %>
       <% end %>
       <% if logged_in? %>
-        <%= link_to "LOGOUT", login_path , method: :delete , class:"btn btn-primary",role:"button" %>
+        <%= link_to "My Profile", user_path(current_user) , class:"btn btn-outline-success",role:"button" %>
+        <%= link_to "LOGOUT", login_path , method: :delete , class:"btn btn-success",role:"button" %>
       <% end %>
       </center>
     </div>

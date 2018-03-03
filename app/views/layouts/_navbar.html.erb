@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "ALPHA-BLOG", root_path , class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Posts", articles_path ,class:"btn btn-primary",role:"button",class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Users", users_path ,class:"btn btn-primary",role:"button",class: "nav-link"  %>
+      </li>
+    </ul>
+    <% if !logged_in? %>
+    <%= link_to "SignUp",  signup_path,class:"btn btn-primary",role:"button",class: "btn btn-outline-success my-2 my-sm-0" %>
+    <% end %>
+    <% if logged_in? %>
+    <%= link_to "Edit my accout", edit_user_path(current_user),class:"btn btn-primary",role:"button",class: "btn btn-primary my-2 my-sm-0" %>
+    <% end %>
+  </div>
+</nav>

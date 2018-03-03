@@ -2,7 +2,7 @@
   <% @article.each do |article| %>
     <div align="center" class="container main_container">
       <%= article.title %><br>
-      <%= article.description %><br>
+      <%= truncate(article.description, length: 25 ) %><br>
       <div class="about_creator">
         <small>Created by: <%= article.user.username %> |
                Created : <%= time_ago_in_words(article.created_at) %> ago |
