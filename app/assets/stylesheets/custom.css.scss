@@ -4,7 +4,7 @@ body{
    background-image: asset-url('gradient.jpg');
    width: 100%;
    height: auto;
-   background-repeat: no-repeat;
+   background-repeat: repeat-x;
 }
 
 small{
@@ -73,4 +73,7 @@ small{
 }
 .pagination{
   align-content: center;
+}
+.sessions{
+  color: white;
 }

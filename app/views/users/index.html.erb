@@ -6,7 +6,8 @@
          <%= link_to user.username, user_path(user) %>
       </div>
       <% end %>
-      <div class="pagination">
-         <%= will_paginate(@user, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+      <div align = "center" class="pagination">
+         <%= will_paginate(@user, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %><br>
       </div>
+       <%= link_to "Back to Home", root_path ,class: "btn btn-secondary"%>
 </div>

@@ -27,7 +27,10 @@
         <% end %><br><br>
     <div class="re-routes">
       <%= link_to "Create article", new_article_path %> |
-      <%= link_to "Back to Home", root_path %>
+      <%= link_to "Back to Home", root_path %> |
+      <% if logged_in? %>
+      <%= link_to "Logout", login_path ,method: :delete %>
+      <% end %>
     </div>
     </center>
 

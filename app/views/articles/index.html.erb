@@ -16,8 +16,6 @@
       </div>
     </div>
     <% end %><br><br>
-    <div class="pagination">
        <%= will_paginate(@article, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
-    </div>
-<%= link_to "Back to Home", root_path ,class: "btn btn-secondary"%>
+       <%= link_to "Back to Home", root_path ,class:"btn btn-secondary"%>
 </div>
