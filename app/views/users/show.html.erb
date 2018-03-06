@@ -31,7 +31,10 @@
       <%= link_to "Create article", new_article_path %> |
       <%= link_to "Back to Home", root_path %> |
       <% if logged_in? %>
-      <%= link_to "Logout", login_path ,method: :delete %>
+      <%= link_to "Logout", login_path ,method: :delete %> |
+      <% end %>
+      <% if logged_in? and current_user.admin? %>
+        <h3><%= link_to "i'm admin", root_path %></h3>
       <% end %>
       <%= will_paginate(@user_paginate, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
     </div>
